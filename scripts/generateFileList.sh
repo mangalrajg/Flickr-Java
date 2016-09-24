@@ -16,13 +16,4 @@ aPATH=`dirname "$line"`
 ALBUM=`basename "$aPATH"`
 echo :$ALBUM::$FILNAME:$OP
 done<$TMP_DIR/Images.txt
-#find $BASE_DIR -type d>$TMP_DIR/dirs.txt
-#while read line
-#do
-#count=`ls "$line"/*JPG "$line"/*jpg|wc -l 2>/dev/null`
-#if [ "$count" != 0 ]
-#then
-#export IFS="="
-#identify -format %f:%[EXIF:DateTimeOriginal]\\n $line/*jpg $line/*.JPG|xargs -n 1  echo $line
-#fi
-#done <$TMP_DIR/dirs.txt
+
