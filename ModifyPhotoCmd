@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ $# -ne 1 ]
+then
+echo "Usage $0 <FileContainingList>"
+exit
+fi
+/home/mangal/Downloads/jre1.8.0_101/bin/java -classpath /home/mangal/workspace/Flickr-Java/bin:/home/mangal/workspace/Flickr-Java/jars/flickr4java-2.16.jar:/home/mangal/workspace/Flickr-Java/jars/java-json.jar:/home/mangal/workspace/Flickr-Java/jars/log4j.jar:/home/mangal/workspace/Flickr-Java/jars/org-apache-commons-codec.jar:/home/mangal/workspace/Flickr-Java/jars/scribe-1.3.2.jar:/home/mangal/workspace/Flickr-Java/jars/scribejava-apis-2.5.2.jar com.mangalraj.Flicker.ModifyPhotos $1
