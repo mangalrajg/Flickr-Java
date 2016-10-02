@@ -1,0 +1,20 @@
+#!/bin/bash
+if [ $# -ne 2 ] 
+then
+echo Usage
+exit
+fi
+
+SRC=$1
+DEST=$2
+TMP_DIR=/tmp
+
+cd "$SRC"
+find . -regex ".*\.\(JPG\|jpg\|gif\|PNG\|png\|jpeg\)">$TMP_DIR/Images.txt
+cd -
+while read line
+do
+DIR=`dirname "$DEST/$line"`
+mkdir -p "$DIR"
+convert "$SRC/$line" -resize 100 "$DEST/$line"
+done<$TMP_DIR/Images.txt
