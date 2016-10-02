@@ -87,9 +87,10 @@ public class ModifyPhotos {
 				
 				Photo p = photoInt.getPhoto(photoId);
 				Photoset ps = photosetInt.getInfo(setId);
-
-				UpdateAlbum(albumName, ps, p);
+				
+				UpdateAlbum(albumName, ps, p);				
 				UpdatePhoto(photoName,dateTakenInDate, p);
+				
 			}
 		}
 	}
