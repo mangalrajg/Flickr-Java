@@ -87,7 +87,7 @@ public class DownloadPhotos {
 	}
 
 	private void DownloadPhoto(String photoId, String photoName, String albumName) throws FlickrException, IOException {
-		String directoryName = new String(baseDirectory + albumName).replace('\\', '/');
+		String directoryName = new String(baseDirectory+"\\" + albumName).replace('\\', '/');
 		File setDirectory = new File(directoryName);
 		if (!setDirectory.exists()) {
 			setDirectory.mkdirs();

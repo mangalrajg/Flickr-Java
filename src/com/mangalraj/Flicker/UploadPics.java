@@ -86,7 +86,7 @@ public class UploadPics {
 				// String photoId = command[2];
 				String photoName = command[3];
 				// String dateTaken = command[4];
-				File uploadFile = new File(baseDir + albumName + "/" + photoName);
+				File uploadFile = new File(baseDir +"/"+ albumName + "/" + photoName);
 				uploadedPics.println("Uploading:" + uploadFile.getAbsolutePath());
 				uploadedPics.flush();
 				if (uploadFile.exists() && uploadFile.isFile()) {
