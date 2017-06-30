@@ -1,0 +1,2 @@
+set CLASSPATH=E:\\Code\\Flickr-Java\\
+set JARS=%CLASSPATH%\\bin;%CLASSPATH%\\jars\\flickr4java-2.16.jar;%CLASSPATH%\\jars\\java-json.jar;%CLASSPATH%\\jars\\log4j.jar;%CLASSPATH%\\jars\\org-apache-commons-codec.jar;%CLASSPATH%\\jars\\scribe-1.3.2.jar;%CLASSPATH%\\jars\\scribejava-apis-2.5.2.jar;%CLASSPATH%\\jars\\metadata-extractor-2.9.1.jar;%CLASSPATH%\\jars\\xmpcore-5.1.2.jar
