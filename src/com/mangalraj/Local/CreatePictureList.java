@@ -23,8 +23,8 @@ public class CreatePictureList {
 	public void printPhotoList(ArrayList<File> fileList) throws Exception {
 		DateFormat outputDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 		DateFormat inputDateFormat = new SimpleDateFormat("yyyy:MM:dd HH:mm:ss");
-		PrintWriter dumpText = new PrintWriter("dumpFolder.txt", "UTF-8");
-		PrintWriter dumpError = new PrintWriter("dumpErrors.txt", "UTF-8");
+		PrintWriter dumpText = new PrintWriter("PictureList.Local.txt", "UTF-8");
+		PrintWriter dumpError = new PrintWriter("PictureList.Local.err", "UTF-8");
 
 		Iterator<File> sets = fileList.iterator();
 		while (sets.hasNext()) {

@@ -2,14 +2,18 @@ package com.mangalraj.Flicker;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 import org.xml.sax.SAXException;
 
@@ -92,26 +96,26 @@ public class DownloadPhotos {
 		if (!setDirectory.exists()) {
 			setDirectory.mkdirs();
 		}
-
+//
 		PhotosInterface photoInt = flickr.getPhotosInterface();
-
 		Photo p = photoInt.getPhoto(photoId);
 		String filename = photoName;
 		filename = filename.substring(filename.lastIndexOf("/") + 1, filename.length());
 		logFile.println("Now writing " + filename + " to " + setDirectory.getAbsolutePath());
 		BufferedInputStream inStream = new BufferedInputStream(photoInt.getImageAsStream(p, Size.THUMB));
-
+		//InputStream inStream = new ByteArrayInputStream("".getBytes(StandardCharsets.UTF_8));
 		File newFile = new File(setDirectory, filename);
 
-		FileOutputStream fos = new FileOutputStream(newFile);
-
-		int read;
-
-		while ((read = inStream.read()) != -1) {
-			fos.write(read);
+		if(!newFile.exists())
+		{
+			FileOutputStream fos = new FileOutputStream(newFile);
+			int read;
+			while ((read = inStream.read()) != -1) {
+				fos.write(read);
+			}
+			fos.flush();
+			fos.close();
 		}
-		fos.flush();
-		fos.close();
 		inStream.close();
 	}
 }

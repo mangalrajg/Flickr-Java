@@ -34,7 +34,7 @@ public class CreatePictureList {
 
 
 	public void getPhotoList() throws Exception {
-		PrintWriter dumpText = new PrintWriter("dumpTextMT2.txt", "UTF-8"); 
+		PrintWriter dumpText = new PrintWriter("PictureList.Flickr.txt", "UTF-8"); 
 
 		PhotosetsInterface pi = flickr.getPhotosetsInterface();
 

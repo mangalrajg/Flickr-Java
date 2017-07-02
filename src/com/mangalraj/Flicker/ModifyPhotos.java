@@ -131,5 +131,29 @@ public class ModifyPhotos {
 				photosetInt.addPhoto(ps.getId(), p.getId());
 			}
 		}
+		else
+		{
+			String currId=ps.getId();
+			photosetInt.removePhoto(ps.getId(), p.getId());
+			ps = null;
+			Iterator<Photoset> sets = photoSets.getPhotosets().iterator();
+			// Find the destination Album
+			while (sets.hasNext()) {
+				Photoset set = (Photoset) sets.next();
+				if (set.getTitle().equals(newAlbumName)) {
+					// Yepee we found it
+					ps = set;
+					break;
+				}
+			}
+			if (ps == null) {
+				// Create new album with requested name
+				ps = photosetInt.create(newAlbumName, "", p.getId());
+				photoSets = photosetInt.getList(this.nsid);
+			} else {
+				photosetInt.addPhoto(ps.getId(), p.getId());
+				System.out.println("Moving Set from: "+currId+" to " +ps.getId());
+			}
+		}
 	}
 }
