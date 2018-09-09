@@ -8,7 +8,7 @@
 	<classpathentry kind="lib" path="jars/org-apache-commons-codec.jar"/>
 	<classpathentry kind="lib" path="jars/scribe-1.3.2.jar"/>
 	<classpathentry kind="lib" path="jars/scribejava-apis-2.5.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mangal/git/Flickr-Java/jars/metadata-extractor-2.9.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mangal/git/Flickr-Java/jars/xmpcore-5.1.2.jar"/>
+	<classpathentry kind="lib" path="jars/metadata-extractor-2.9.1.jar"/>
+	<classpathentry kind="lib" path="jars/xmpcore-5.1.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
